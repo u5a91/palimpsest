@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ['\\[','\\]']]
+        },
+        svg: { fontCache: 'global' }
+      };
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  </head>
+  <body>
+    <!-- ここからサイト全体を包むラッパー -->
+    <div class="site-wrapper">
+      <!-- ヘッダー -->
+      <header class="site-header">
+        <h1 class="site-title">
+          <a href="/">{{ site.title }}</a>
+        </h1>        
+        <div class="nav-wrapper">
+          <nav class="site-nav">
+            <a href="/information/">About</a>
+            <a href="/articles/">Articles</a>
+            <a href="/images/">Images</a>
+            <a href="/links/">Links</a>
+          </nav>
+        </div>
+      </header>
+
+      <!-- メインコンテンツ -->
+      <main class="page-content">
+        {{ content }}
+      </main>
+      <div class="page-bottom">
+        (C) 2025 宇佐
+      </div>
+      
+      <!-- フッターは削除（不要な線とタイトル出力を抹消） -->
+      <!--
+      <footer class="site-footer">
+        <p>{{ site.title }}</p>
+      </footer>
+      -->
+    </div>
+    <!-- /site-wrapper -->
+  </body>
+</html>

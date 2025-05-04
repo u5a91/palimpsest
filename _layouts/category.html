@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<h2>Category : {{ page.title }}</h2>
+<ul>
+{% assign posts_in_cat = site.categories[page.title] %}
+{% for post in posts_in_cat %}
+  <li>
+    {{ post.date | date: "%Y-%m-%d" }} – 
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>

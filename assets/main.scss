@@ -1,0 +1,175 @@
+---
+---
+
+@import "minima";
+
+.site-wrapper {
+  transform-origin: top center; /* 上端中央を基準に縮小 */
+}
+
+body {
+    background-color: #cdeeff;
+    color: #331408;
+}
+
+/* site-header自体の幅を制限する */
+.site-header {
+    width: 50%;  /* ページ幅 */
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    border: none !important; /* ← ここを追加！！ */
+}
+
+/* タイトルのスタイル */
+.site-title {
+    font-family: 'Futura', sans-serif;
+    font-size: 3em;
+    color: #331408; /* ← これを手動で追加すればOKです */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+    display: block;
+    width: 100%;
+}
+
+/* タイトル下の線は無効化 */
+.site-title::after {
+    content: none;
+}
+
+.site-title a {
+    text-decoration: none; /* ふだんは下線なし */
+    color: inherit; /* 色も親に合わせる */
+}
+
+/* カーソルを当てたとき（hover時） */
+.site-title a:hover {
+    text-decoration: underline; /* 下線を表示 */
+}
+
+.site-nav {
+    /* ビューポート上部中央に固定 */
+    position: sticky;              /* 画面スクロール中も常に表示 */
+    top: 100%;                       /* ← ヘッダー下にずらす */
+
+    width: 600px;            /* 線の長さを固定 */
+    display: flex;           /* リンクを横並びに */
+    justify-content: space-around; /* 均等配置 */
+    padding-bottom: 0.5em;   /* テキストとの余白 */
+    border-bottom: 1px solid #888888;
+    background-color: #cdeeff;/* 下のコンテンツを隠す背景色 */
+    z-index: 999;            /* 他要素より前面に */
+}
+
+/* ナビゲーション内のリンクを横並びにする */
+.site-nav a {
+    margin: 0 3em;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+.page-content {
+    width: 50%; /* ページ幅 */
+    margin: 0 auto;
+    /* ↓ ここを追加 */
+    border-bottom: 1px solid #888888;
+    padding-bottom: 2em;      /* 線とコンテンツの余白 */
+    /* 線の長さを 600px に固定 */
+    max-width: 600px;
+    /* 600px に満たない幅のときは幅いっぱい？なら width: 100% でもOK */
+    width: 100%;
+}
+    
+.page-content {
+    width: 600px;
+    margin: 0 auto;
+}    
+
+.site-footer {
+    width: 50%; /* ページ幅 */
+    margin: 0 auto;
+    border-top: 1px solid #888888; /* ← 線を濃くする */
+}
+
+@media (max-width: 700px) {
+  .site-wrapper {
+    transform: scale(0.75);
+  }
+}
+
+.nav-wrapper {
+    position: relative;       /* .site-nav の absolute 基準 */
+    width: 100%;              /* ヘッダー幅に合わせる */
+    display: flex;            
+    justify-content: center;  /* 子要素 (.site-nav) を中央に */
+}
+
+.page-bottom {
+    width: 600px;             /* 線と同じ幅 */
+    margin: 0 auto;           /* 中央寄せ */
+    padding: 1em 0;           /* 上下の余白 */
+    text-align: center;       /* 文字を中央に */
+    color: #331408;           /* タイトルと同じ色 */
+    font-size: 0.9em;         /* ちょっと小さめに */
+}   
+
+.math-center {
+    text-align: center;          /* ブロック自体を中央寄せ */
+    margin: 1.5em auto !important; /* 上下余白＆左右中央寄せ */
+  }
+  
+blockquote.definition {
+    border-left: 4px solid #331408;
+    padding: 1em 1.5em;
+    margin: 1.5em 0;
+    background-color: hsla(195, 60%, 97%, 0.9);
+  
+    /* ブロック全体の文字色を元のダークブラウンに */
+    color: #331408 !important;
+}
+  
+blockquote.definition {
+    border-left: 4px solid #331408;
+    padding: 1em 1.5em;
+    margin: 1.5em 0;
+  
+    /* 薄い水色背景 */
+    background-color: hsla(195, 60%, 97%, 0.9);
+  
+    /* 本文と同じフォント・サイズ・字間・スタイルに */
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-style: normal !important;
+    letter-spacing: normal !important;
+    color: inherit !important;
+  }
+  
+  blockquote.definition *,
+  blockquote.definition *:before,
+  blockquote.definition *:after {
+    /* 子要素にも確実に継承させる */
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-style: inherit !important;
+    letter-spacing: inherit !important;
+    color: inherit !important;
+  }
+  
+  blockquote.definition .title {
+    /* タイトルも本文まんま。太字のみ指定 */
+    display: inline-block;
+    font-weight: bold !important;
+    font-style: inherit !important;
+    font-size: inherit !important;
+    letter-spacing: inherit !important;
+    color: inherit !important;
+  
+    /* テキスト幅にあわせた下線 */
+    border-bottom: 2px solid rgba(136,136,136,0.7);
+    padding-bottom: 0.1em;
+    margin-bottom: 0.5em;
+  }
+  
