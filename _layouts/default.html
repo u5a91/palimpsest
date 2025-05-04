@@ -21,14 +21,14 @@
       <!-- ヘッダー -->
       <header class="site-header">
         <h1 class="site-title">
-          <a href="/">{{ site.title }}</a>
+          <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
         </h1>        
         <div class="nav-wrapper">
           <nav class="site-nav">
-            <a href="/information/">About</a>
-            <a href="/articles/">Articles</a>
-            <a href="/images/">Images</a>
-            <a href="/links/">Links</a>
+            <a href="{{ '/information/' | relative_url }}">About</a>
+            <a href="{{ '/articles/' | relative_url }}">Articles</a>
+            <a href="{{ '/images/' | relative_url }}">Images</a>
+            <a href="{{ '/links/' | relative_url }}">Links</a>
           </nav>
         </div>
       </header>
