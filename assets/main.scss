@@ -173,27 +173,60 @@ blockquote.definition {
     margin-bottom: 0.5em;
   }
   
-  @media only screen
-  and (max-width: 600px)
-  and (hover: none)
-  and (pointer: coarse) {
-
-  .site-header,
-  .page-content,
-  .site-nav,
-  .site-footer {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 auto !important;
-    padding: 1rem !important;
+  @media only screen and (max-width: 600px) and (hover: none) and (pointer: coarse) {
+    /* ヘッダー全体を画面幅いっぱいに */
+    .site-header {
+      width: 100% !important;
+      max-width: none !important;
+      padding: 0 1rem !important;  /* 左右余白 */
+      margin: 0 !important;        /* 中央寄せは不要 */
+    }
+    /* ロゴ＋ナビを縦に並べたいなら flex 設定を変える */
+    .site-header .wrapper {
+      display: block !important;
+      text-align: center !important;
+    }
+    /* ナビ自体も幅100%に */
+    .site-nav {
+      width: 100% !important;
+      max-width: none !important;
+      padding: 0.5rem 1rem !important;
+      margin: 0 auto !important;
+    }
+  
+    /* タイトルはセンターに */
+    .site-title {
+      display: block !important;
+      margin: 0.5rem auto !important;
+    }
+  
+    /* 本文領域をほぼ100%幅に */
+    .page-content {
+      width: calc(100% - 2rem) !important;  /* 画面幅から左右padding(1rem×2)を引いた幅 */
+      max-width: none !important;
+      margin: 0 auto !important;
+      padding: 1rem !important;
+      border-bottom: none !important;
+    }
+  
+    /* もし線（hr やボーダー）を目一杯伸ばしたいなら */
+    hr {
+      margin: 1rem 0;
+      width: calc(100% - 2rem) !important;
+    }
+  
+    /* フッターも画面幅に */
+    .site-footer {
+      width: 100% !important;
+      max-width: none !important;
+      padding: 1rem !important;
+      margin: 0 !important;
+    }
+  
+    /* テキスト周りはそのまま */
+    body {
+      font-size: 16px !important;
+      line-height: 1.6 !important;
+    }
   }
-
-  body {
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-  }
-
-  .site-title {
-    font-size: 1.5rem !important;
-  }
-}
+  
