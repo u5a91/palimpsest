@@ -173,3 +173,27 @@ blockquote.definition {
     margin-bottom: 0.5em;
   }
   
+  @media only screen
+  and (max-width: 600px)
+  and (hover: none)
+  and (pointer: coarse) {
+
+  .site-header,
+  .page-content,
+  .site-nav,
+  .site-footer {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+  }
+
+  body {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+
+  .site-title {
+    font-size: 1.5rem !important;
+  }
+}
