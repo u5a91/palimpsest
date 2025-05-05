@@ -173,60 +173,31 @@ blockquote.definition {
     margin-bottom: 0.5em;
   }
   
-  @media only screen and (max-width: 600px) and (hover: none) and (pointer: coarse) {
-    /* ヘッダー全体を画面幅いっぱいに */
-    .site-header {
-      width: 100% !important;
-      max-width: none !important;
-      padding: 0 1rem !important;  /* 左右余白 */
-      margin: 0 !important;        /* 中央寄せは不要 */
-    }
-    /* ロゴ＋ナビを縦に並べたいなら flex 設定を変える */
+  @media only screen and (max-width:600px) and (hover:none) and (pointer:coarse) {
+    /* ① ヘッダー内の wrapper をフル幅＋センター寄せに */
     .site-header .wrapper {
-      display: block !important;
-      text-align: center !important;
-    }
-    /* ナビ自体も幅100%に */
-    .site-nav {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
       width: 100% !important;
-      max-width: none !important;
-      padding: 0.5rem 1rem !important;
-      margin: 0 auto !important;
-    }
-  
-    /* タイトルはセンターに */
-    .site-title {
-      display: block !important;
-      margin: 0.5rem auto !important;
-    }
-  
-    /* 本文領域をほぼ100%幅に */
-    .page-content {
-      width: calc(100% - 2rem) !important;  /* 画面幅から左右padding(1rem×2)を引いた幅 */
-      max-width: none !important;
-      margin: 0 auto !important;
-      padding: 1rem !important;
-      border-bottom: none !important;
-    }
-  
-    /* もし線（hr やボーダー）を目一杯伸ばしたいなら */
-    hr {
-      margin: 1rem 0;
-      width: calc(100% - 2rem) !important;
-    }
-  
-    /* フッターも画面幅に */
-    .site-footer {
-      width: 100% !important;
-      max-width: none !important;
-      padding: 1rem !important;
+      padding: 0 !important;
       margin: 0 !important;
     }
   
-    /* テキスト周りはそのまま */
-    body {
-      font-size: 16px !important;
-      line-height: 1.6 !important;
+    /* ② ナビを wrapper の幅いっぱいに広げる */
+    .site-header .wrapper .site-nav {
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: .5rem 1rem !important;
+    }
+  
+    /* ③ 記事幅も真正面から100%に */
+    .page-content {
+      width: 100% !important;
+      max-width: none !important;
+      padding: 1rem !important;  /* 余白だけ残す */
+      margin: 0 !important;
     }
   }
   
